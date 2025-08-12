@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UNI Portfolio</title>
+  <meta name="description" content="UI/UX・Web制作・Figma・HTML/CSS｜夜・週末対応">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#">UNI</a>
+    <nav class="nav">
+      <a href="#works">Works</a>
+      <a href="#sns">SNS</a>
+      <a href="#about">About</a>
+      <a class="cta" href="mailto:contact@example.com">相談する</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1 class="animate-hero">問題解決から実装まで、はじめてのWeb/UIを一緒に形にします。</h1>
+      <div class="hero-bar"></div>
+      <p>Figma／HTML・CSS／Excel自動化｜夜・週末対応</p>
+      <a class="btn hero-btn" href="mailto:contact@example.com">無料で相談する</a>
+    </div>
+  </section>
+
+  <section id="works" class="section">
+    <div class="container">
+      <h2>Works</h2>
+      <div class="grid">
+        <!-- 送信管理UI -->
+        <article class="card fade-in">
+          <img src="img/figma.png" alt="送信管理UIデザイン（予約・下書き・送信済み）">
+          <div class="card-body">
+            <h3>送信管理UIデザイン（予約・下書き・送信済み）</h3>
+            <p class="tags">#UI #Figma #モバイル #PC</p>
+            <details>
+              <summary>概要を見る</summary>
+              <p>送信予約・下書き管理・送信済み履歴の3画面を統一デザインで設計。<br>
+              宛先→内容→日時→確認の一方向フローで誤操作を抑制し、<br>
+              下書きや履歴機能の再利用性を高めました。</p>
+              <ul>
+                <li>UIルール統一（ヘッダー/メニュー/CTA配置）</li>
+                <li>カードレイアウトで情報を一目化</li>
+                <li>モーダルで再送・削除時の確認</li>
+              </ul>
+              <a class="proto-btn" href="https://www.figma.com/proto/xULWNV5d9PCSAXLjrzXmvj/SaaS-UI?node-id=2104-11&p=f&t=PFRVQgsPvGYOIOjo-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2104%3A11&show-proto-sidebar=1" target="_blank">▶ プロトタイプを見る</a>
+            </details>
+          </div>
+        </article>
+
+        <!-- Itto -->
+        <article class="card fade-in">
+          <img src="img/itto.png" alt="一陶コーポレートサイト（制作途中）">
+          <div class="card-body">
+            <h3>一陶コーポレートサイト（制作途中）</h3>
+            <p class="tags">#Web #HTML/CSS</p>
+            <details>
+              <summary>概要を見る</summary>
+              <p>“何屋か3秒で伝わる”を重視。業務内容の左右交互レイアウトと、<br>
+              施工事例のカード化で導線を明確化しました。</p>
+            </details>
+          </div>
+        </article>
+
+        <!-- Flyers -->
+        <article class="card fade-in">
+          <img src="img/flyer.png" alt="フライヤー">
+          <div class="card-body">
+            <h3>結婚相談所／イベントフライヤー</h3>
+            <p class="tags">#Graphic #Canva</p>
+            <details>
+              <summary>概要を見る</summary>
+              <p>USP訴求とCTA強化。SNS版は1080×1350でスワイプ導線を設計。</p>
+            </details>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram風ギャラリー -->
+  <section id="sns" class="section">
+    <div class="container">
+      <h2>SNS Feed（Instagram-like）</h2>
+      <p class="sub">SNSの世界観に合わせた1:1グリッド（9枚）。ホバーで❤️/💬、クリックで拡大表示。</p>
+      <div class="insta-grid">
+        <!-- 9枚：画像は好きな拡張子でOK（.webp/.jpg/.png） -->
+        <div class="insta-item"><img src="img/feed01.png" alt="feed01" data-full="feed01.webp"><div class="insta-overlay">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 21s-8-6.58-8-11.5S7.5 3 12 7.09 20 3 20 9.5 12 21 12 21Z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/></svg>
+        </div></div>
+
+        <div class="insta-item"><img src="img/feed02.png" alt="feed02" data-full="feed02.webp"><div class="insta-overlay">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 21s-8-6.58-8-11.5S7.5 3 12 7.09 20 3 20 9.5 12 21 12 21Z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/></svg>
+        </div></div>
+
+        <div class="insta-item"><img src="img/feed03.png" alt="feed03" data-full="feed03.webp"><div class="insta-overlay">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 21s-8-6.58-8-11.5S7.5 3 12 7.09 20 3 20 9.5 12 21 12 21Z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/></svg>
+        </div></div>
+
+        <div class="insta-item"><img src="img/feed04.png" alt="feed04" data-full="feed04.webp"><div class="insta-overlay">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 21s-8-6.58-8-11.5S7.5 3 12 7.09 20 3 20 9.5 12 21 12 21Z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/></svg>
+        </div></div>
+
+        <div class="insta-item"><img src="img/feed05.png" alt="feed05" data-full="feed05.webp"><div class="insta-overlay">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 21s-8-6.58-8-11.5S7.5 3 12 7.09 20 3 20 9.5 12 21 12 21Z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/></svg>
+        </div></div>
+
+        <div class="insta-item"><img src="img/feed06.png" alt="feed06" data-full="feed06.webp"><div class="insta-overlay">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 21s-8-6.58-8-11.5S7.5 3 12 7.09 20 3 20 9.5 12 21 12 21Z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/></svg>
+        </div></div>
+
+        <div class="insta-item"><img src="img/feed07.png" alt="feed07" data-full="feed07.webp"><div class="insta-overlay">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 21s-8-6.58-8-11.5S7.5 3 12 7.09 20 3 20 9.5 12 21 12 21Z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/></svg>
+        </div></div>
+
+        <div class="insta-item"><img src="feed08.webp" alt="feed08" data-full="feed08.webp"><div class="insta-overlay">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 21s-8-6.58-8-11.5S7.5 3 12 7.09 20 3 20 9.5 12 21 12 21Z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/></svg>
+        </div></div>
+
+        <div class="insta-item"><img src="feed09.webp" alt="feed09" data-full="feed09.webp"><div class="insta-overlay">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 21s-8-6.58-8-11.5S7.5 3 12 7.09 20 3 20 9.5 12 21 12 21Z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/></svg>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About</h2>
+      <p>神奈川拠点。UI/UX設計とWeb実装を横断。<br>
+      Figmaで設計→HTML/CSSで実装、必要に応じてExcel自動化も対応します。</p>
+      <ul class="skills">
+        <li>Figma</li><li>HTML/CSS</li><li>Excel VBA</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <small>© 2025 UNI</small>
+  </div>
+</footer>
+
+<!-- モーダル（拡大表示） -->
+<div id="lightbox" class="modal" aria-hidden="true">
+  <button class="modal-close" aria-label="閉じる">×</button>
+  <img src="" alt="preview">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

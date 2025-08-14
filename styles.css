@@ -150,3 +150,26 @@ img { max-width: 100%; height: auto; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+/* ===== Mobile tweaks ===== */
+@media (max-width: 820px) {
+  /* ヘッダー：ナビを1行・横スクロールにして折返し防止 */
+  .header-inner { height: auto; padding: 8px 0; }
+  .logo { font-size: 18px; line-height: 1; }
+
+  .nav {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;           /* 指で横スクロール可 */
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;        /* 折り返さない */
+  }
+  .nav a {
+    flex: 0 0 auto;             /* 幅を詰める */
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  /* 「詳細を見る」内の本文をやや左寄せ（元の余白を軽く） */
+  .card details { padding-left: 4px; }
+  .card details p { padding-left: 8px; }   /* 既存の16pxを少しだけに */
+}

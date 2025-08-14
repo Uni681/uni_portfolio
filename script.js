@@ -55,3 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape" && modal.classList.contains("show")) closeModal();
   });
 });
+// --- Mobile-only: 「詳細を見る」の本文で句点の後に改行を入れる（箇条書きは対象外） ---
+if (window.matchMedia("(max-width: 820px)").matches) {
+  document.querySelectorAll('.card details p').forEach(p => {
+    if (p.dataset.brApplied) return;                 // 二重適用防止
+    p.innerHTML = p.innerHTML.replace(/。\s*/g, '。<br>');
+    p.dataset.brApplied = "true";
+  });
+}

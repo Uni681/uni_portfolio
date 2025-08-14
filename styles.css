@@ -217,9 +217,49 @@ img { max-width: 100%; height: auto; }
 }
 
 /* さらに狭い端末（iPhone SE等）は微縮小 */
+/* ==== Mobile header fix (no scroll, proper left padding) ==== */
+@media (max-width: 820px) {
+  /* ヘッダー内だけ左/右パディングを少し増やしてロゴの食い込みを防止 */
+  .site-header .container { padding: 0 20px; }
+
+  .header-inner { gap: 8px; height: 56px; }
+
+  /* ロゴ */
+  .logo {
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: .4px;
+    white-space: nowrap;
+    margin-right: auto;
+  }
+
+  /* ナビ */
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    overflow: visible !important;
+    white-space: normal !important;
+  }
+
+  .nav a {
+    margin-left: 0;
+    padding: 6px 6px;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  /* スマホではCTA(相談する)を非表示 */
+  .nav .cta {
+    display: none;
+  }
+}
+
+/* さらに狭い端末（iPhone SE等）は微縮小 */
 @media (max-width: 360px) {
-  .site-header .container { padding: 0 16px; } /* ほんの少し戻す */
+  .site-header .container { padding: 0 16px; }
   .logo { font-size: 16px; }
   .nav a { font-size: 13px; padding: 5px 6px; }
-  .nav .cta { font-size: 12px; padding: 5px 9px; }
 }

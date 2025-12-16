@@ -22,30 +22,50 @@
      1. ふわっと表示（reveal）
      .reveal を付けた要素が対象
   ----------------------------- */
-  const setupReveal = () => {
-    const targets = $$(".reveal");
-    if (!targets.length) return;
+const setupReveal = () => {
+  const targets = $$(".reveal");
+  if (!targets.length) return;
 
-    if (prefersReducedMotion) {
-      targets.forEach(el => el.classList.add("is-visible"));
-      return;
-    }
+  // 省エネ/安全：スマホは最初から全部表示（CSSでも保険済み）
+  if (window.matchMedia("(max-width: 820px)").matches) {
+    targets.forEach(el => el.classList.add("is-visible"));
+    return;
+  }
 
-    const io = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
+  // Reduced motion は全部表示
+  if (prefersReducedMotion) {
+    targets.forEach(el => el.classList.add("is-visible"));
+    return;
+  }
 
-    targets.forEach(el => io.observe(el));
-  };
+  // IntersectionObserverが無い/壊れた時の保険
+  if (!("IntersectionObserver" in window)) {
+    targets.forEach(el => el.classList.add("is-visible"));
+    return;
+  }
 
+  const io = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.01, rootMargin: "0px 0px -10% 0px" }
+  );
+
+  targets.forEach(el => io.observe(el));
+
+  // さらに保険：初期表示で見えてるのに発火しない端末向け
+  requestAnimationFrame(() => {
+    targets.forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.95) el.classList.add("is-visible");
+    });
+  });
+};
   /* -----------------------------
      2. Works画像モーダル
      対象：.work-image img

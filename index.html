@@ -1,194 +1,260 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>IIJIMA NANA Portfolio</title>
-  <meta name="description" content="UI/UX・Web制作・Figma・HTML/CSS｜夜・週末対応">
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <meta name="description" content="UI / LP / Web Design Portfolio">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 
 </head>
 <body>
+
 <header class="site-header">
-  <div class="container header-inner">
-    <a class="logo" href="#">IIJIMA NANA</a>
-    <nav class="nav">
-      <a href="#works">Works</a>
-      <a href="#sns">SNS</a>
-      <a href="#about">About</a>
-      <a class="cta" href="mailto:contact@example.com">相談する</a>
-    </nav>
+  <div class="container">
+    <p class="site-name">UNI DESIGN</p>
   </div>
 </header>
 
 <main>
-<section class="hero">
-  <div class="container">
-    <h1 class="animate-hero no-wrap-title">
-      問題解決から実装まで、はじめてのWeb/UIを一緒に形にします。
-    </h1>
-    <div class="hero-bar"></div>
-    <p>Figma｜HTML・CSS・JS｜SNSコンテンツ制作｜スケジュール柔軟対応可</p>
-    <a class="btn hero-btn" href="mailto:contact@example.com">無料で相談する</a>
-  </div>
-</section>
 
-  <section id="works" class="section">
+  <!-- =========================
+       HERO
+  ========================== -->
+  <section class="hero reveal">
     <div class="container">
-      <h2>Works</h2>
-      <div class="grid">
-        <!-- 1: 送信管理UI -->
-        <article class="card reveal" data-delay="0">
-          <img src="img/figma.png" alt="SaaS/UIデザイン">
-          <div class="card-body">
-            <h3>SaaS/UIデザイン</h3>
-            <p class="tags">#UI #Figma #モバイル #PC</p>
-            <details>
-              <summary>概要を見る</summary>
-              <p>送信予約・下書き管理・送信済み履歴の3画面を統一デザインで設計。宛先→内容→日時→確認の一方向フローで誤操作を抑制。</p>
-              <ul>
-                <li>UIルール統一（ヘッダー/メニュー/CTA配置）</li>
-                <li>カードレイアウトで情報を一目化</li>
-                <li>再送・削除の誤操作防止（確認モーダル）</li>
-              </ul>
-              <a class="proto-btn" href="https://www.figma.com/proto/xULWNV5d9PCSAXLjrzXmvj/SaaS-UI?node-id=2104-11&starting-point-node-id=2104%3A11&show-proto-sidebar=1&scaling=contain&content-scaling=fixed&t=JoNXFXOCM6O6E9Ci-1" target="_blank" rel="noopener">▶ プロトタイプを見る</a>
-            </details>
-          </div>
-        </article>
-
-        <!-- 2: Itto -->
-<article class="card reveal" data-delay="1">
-  <img src="img/itto.png" alt="一陶コーポレートサイト">
-  <div class="card-body">
-    <h3>タイル会社コーポレートサイト</h3>
-    <p class="tags">#Web #HTML/CSS/javaScript</p>
-    <details>
-      <summary>概要を見る</summary>
-      <p>“何屋か3秒で伝わる”を重視。業務内容の左右交互レイアウトと施工事例カードで導線を明確化。</p>
-      <div class="btn-row">
-        <a class="btn small" href="https://uni681.github.io/itto-site/" target="_blank" rel="noopener">Preview</a>
-      </div>
-    </details>
-  </div>
-</article>
-        <!-- 3: Flyers -->
-<article class="card reveal" data-delay="2">
-  <img src="img/flyer.png" alt="フライヤー">
-  <div class="card-body">
-    <h3>結婚相談所／イベントフライヤー</h3>
-    <p class="tags">#Graphic #Canva</p>
-    <details>
-      <summary>概要を見る</summary>
-      <p>USP訴求とCTA強化。SNS版は1080×1350でスワイプ導線を設計。</p>
-      <div class="btn-row">
-        <a class="btn small" href="https://www.canva.com/design/DAGv9qLDKLQ/IpW4JHmADkLSwrZC-jv19Q/edit?utm_content=DAGv9qLDKLQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" rel="noopener">Preview</a>
-      </div>
-    </details>
-  </div>
-</article>
-        <!-- 4: UI/UXデザイン -->
-<article class="card reveal" data-delay="2">
-  <img src="img/ui.png" alt="デザイン">
-  <div class="card-body">
-    <h3>アプリデザイン／UI/UX設計デザイン</h3>
-    <p class="tags">#UI/UX #Figma #アプリ</p>
-    <details>
-      <summary>概要を見る</summary>
-      <p>ユーザー体験を重視したアプリUIを設計。
-リサーチから画面遷移設計、Figmaによるモックアップまで一貫対応。
-初めて触れる人でも直感的に操作できる導線を意識して制作。</p>
-      <div class="btn-row">
-        <a class="btn small" href="https://www.figma.com/proto/0ygQJEPUmgB4metsDFuO4P/%E3%81%84%E3%81%93%E3%81%A3%E3%81%A1%E3%82%83-%E3%80%80%E5%85%B1%E6%9C%89?node-id=35-17&starting-point-node-id=35%3A17&t=LsKIr2XmdYrfxXwk-1" target="_blank" rel="noopener">Preview</a>
-      </div>
-    </details>
-  </div>
-</article>
-
-        <!-- 5: イベントLP -->
-<article class="card reveal" data-delay="2">
-  <img src="img/lp.png" alt="フライヤー">
-  <div class="card-body">
-    <h3>婚活イベント／イベントLP</h3>
-    <p class="tags">#HTML #CSS #JS #Figma</p>
-    <details>
-      <summary>概要を見る</summary>
-      <p>「参加したい気持ち」を高めるコピーとビジュアルを設計。
-レスポンシブ対応＋HTML/CSS/JSで実装し、LPとして運用可能な形に。
-集客に直結するCTA配置と視認性を意識したデザインを構築。</p>
-      <div class="btn-row">
-        <a class="btn small" href="https://uni681.github.io/konkatu-LP/" target="_blank" rel="noopener">Preview</a>
-      </div>
-    </details>
-  </div>
-</article>
-
-        <!-- 6: 予備スロット -->
-        <article class="card reveal coming" data-delay="5">
-          <div class="coming-wrap">
-            <span class="badge">Coming Soon</span>
-            <p>次の案件を準備中です。</p>
-          </div>
-        </article>
-      </div>
+      <h1>
+        静かに届くデザインを。
+      </h1>
+      <p class="hero-sub">
+        UI / LP / Web Design
+      </p>
     </div>
   </section>
 
-<!-- Instagram風ギャラリー -->
-<section id="sns" class="section">
-  <div class="container">
-    <h2>SNS Feed（Instagram-like）</h2>
-    <p class="sub">1:1グリッド　ホバーでアイコン表示。クリックで拡大表示。</p>
-    <div class="insta-grid">
-      <!-- 9枚：data-full は拡大用（同じでOK） -->
-      <div class="insta-item">
-        <img src="img/feed01.png" alt="feed01" data-full="feed01.webp">
-        <div class="insta-overlay">
-          <!-- ハート -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20.8 4.6c-1.7-1.7-4.5-1.7-6.2 0l-.6.6-.6-.6c-1.7-1.7-4.5-1.7-6.2 0-1.7 1.7-1.7 4.5 0 6.2l6.8 6.8 6.8-6.8c1.7-1.7 1.7-4.5 0-6.2z"/>
-          </svg>
-          <!-- コメント -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-          </svg>
-        </div>
+  <!-- =========================
+       WORKS
+  ========================== -->
+  <section id="works" class="works reveal">
+    <div class="container">
+
+      <h2 class="section-title">Works</h2>
+
+      <!-- Featured -->
+      <div class="works-list featured">
+
+        <article class="work-item large">
+          <div class="work-image">
+            <img src="img/app-ui.png" alt="">
+          </div>
+          <div class="work-text">
+            <h3>アプリUIデザイン</h3>
+            <p>
+              ユーザー同士のマッチングと、ユーザー×飲食店のマッチングという
+              2つの異なる利用シーンを想定したアプリUIを設計しました。<br><br>
+              利用視点が変わっても操作感が分断されないよう、
+              UI構造や導線を統一し、初見でも直感的に操作が理解できることを重視しています。
+            </p>
+            <ul class="meta">
+              <li>ジャンル：マッチングアプリ</li>
+              <li>ツール：Figma</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work-item large">
+          <div class="work-image">
+            <img src="img/lantern-lp.png" alt="">
+          </div>
+          <div class="work-text">
+            <h3>ランタンLP（EC向け）</h3>
+            <p>
+              縦スクロールを前提とした情報設計で制作したLPビジュアルです。<br><br>
+              スマートフォン閲覧が大多数であることを想定し、
+              必要な情報を瞬時に受け取れる視認性を意識しました。<br><br>
+              悩みの提示から不満の解消、改善後の未来までを一連の流れで設計し、
+              最後は購入の後押しとなるCTAビジュアルで締めています。
+            </p>
+            <ul class="meta">
+              <li>ジャンル：LPデザイン</li>
+              <li>ツール：Figma</li>
+            </ul>
+          </div>
+        </article>
+
       </div>
 
-      <div class="insta-item"><img src="img/feed02.png" alt="feed02" data-full="feed02.webp"><div class="insta-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6c-1.7-1.7-4.5-1.7-6.2 0l-.6.6-.6-.6c-1.7-1.7-4.5-1.7-6.2 0-1.7 1.7-1.7 4.5 0 6.2l6.8 6.8 6.8-6.8c1.7-1.7 1.7-4.5 0-6.2z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div></div>
-      <div class="insta-item"><img src="img/feed03.png" alt="feed03" data-full="feed03.webp"><div class="insta-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6c-1.7-1.7-4.5-1.7-6.2 0l-.6.6-.6-.6c-1.7-1.7-4.5-1.7-6.2 0-1.7 1.7-1.7 4.5 0 6.2l6.8 6.8 6.8-6.8c1.7-1.7 1.7-4.5 0-6.2z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div></div>
-      <div class="insta-item"><img src="img/feed04.png" alt="feed04" data-full="feed04.webp"><div class="insta-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6c-1.7-1.7-4.5-1.7-6.2 0l-.6.6-.6-.6c-1.7-1.7-4.5-1.7-6.2 0-1.7 1.7-1.7 4.5 0 6.2l6.8 6.8 6.8-6.8c1.7-1.7 1.7-4.5 0-6.2z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div></div>
-      <div class="insta-item"><img src="img/feed05.png" alt="feed05" data-full="feed05.webp"><div class="insta-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6c-1.7-1.7-4.5-1.7-6.2 0l-.6.6-.6-.6c-1.7-1.7-4.5-1.7-6.2 0-1.7 1.7-1.7 4.5 0 6.2l6.8 6.8 6.8-6.8c1.7-1.7 1.7-4.5 0-6.2z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div></div>
-      <div class="insta-item"><img src="img/feed06.png" alt="feed06" data-full="feed06.webp"><div class="insta-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6c-1.7-1.7-4.5-1.7-6.2 0l-.6.6-.6-.6c-1.7-1.7-4.5-1.7-6.2 0-1.7 1.7-1.7 4.5 0 6.2l6.8 6.8 6.8-6.8c1.7-1.7 1.7-4.5 0-6.2z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div></div>
-      <div class="insta-item"><img src="img/feed07.png" alt="feed07" data-full="feed07.webp"><div class="insta-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6c-1.7-1.7-4.5-1.7-6.2 0l-.6.6-.6-.6c-1.7-1.7-4.5-1.7-6.2 0-1.7 1.7-1.7 4.5 0 6.2l6.8 6.8 6.8-6.8c1.7-1.7 1.7-4.5 0-6.2z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div></div>
-      <div class="insta-item"><img src="img/feed08.png" alt="feed08" data-full="feed08.webp"><div class="insta-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6c-1.7-1.7-4.5-1.7-6.2 0l-.6.6-.6-.6c-1.7-1.7-4.5-1.7-6.2 0-1.7 1.7-1.7 4.5 0 6.2l6.8 6.8 6.8-6.8c1.7-1.7 1.7-4.5 0-6.2z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div></div>
-      <div class="insta-item"><img src="img/feed09.png" alt="feed09" data-full="feed09.webp"><div class="insta-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6c-1.7-1.7-4.5-1.7-6.2 0l-.6.6-.6-.6c-1.7-1.7-4.5-1.7-6.2 0-1.7 1.7-1.7 4.5 0 6.2l6.8 6.8 6.8-6.8c1.7-1.7 1.7-4.5 0-6.2z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div></div>
+      <!-- Other -->
+      <div class="works-list">
+
+        <article class="work-item">
+          <div class="work-image">
+            <img src="img/itto.png" alt="">
+          </div>
+          <div class="work-text">
+            <h3>タイル施工会社 コーポレートサイト</h3>
+            <p>
+              ブランドイメージに合わせ、落ち着きと信頼感のある雰囲気を意識して制作しました。
+              公式HPとしての正しさや安心感が伝わる構成を重視しています。
+            </p>
+            <ul class="meta">
+              <li>HTML / CSS / JavaScript</li>
+              <li>Figma</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work-item">
+          <div class="work-image">
+            <img src="img/event-lp.png" alt="">
+          </div>
+          <div class="work-text">
+            <h3>婚活イベントLP</h3>
+            <p>
+              FVで神社を前面に押し出し、神秘的な雰囲気を意識。
+              悩み提示から解決までを考慮した導線設計を行いました。
+            </p>
+            <ul class="meta">
+              <li>HTML / CSS / JavaScript</li>
+              <li>Figma</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work-item">
+          <div class="work-image">
+            <img src="img/saas-ui.png" alt="">
+          </div>
+          <div class="work-text">
+            <h3>SaaS 送信管理UI</h3>
+            <p>
+              誰もが理解できるアイコンを用い、直感的に操作できるUIを設計。
+              作業効率にも配慮しています。
+            </p>
+            <ul class="meta">
+              <li>SaaS UI</li>
+              <li>Figma</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work-item">
+          <div class="work-image">
+            <img src="img/flyer.png" alt="">
+          </div>
+          <div class="work-text">
+            <h3>婚活イベント チラシ</h3>
+            <p>
+              世界観が一目で伝わることを意識し、
+              情報量を整理したデザインにしています。
+            </p>
+            <ul class="meta">
+              <li>Canva</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ===== Works: Instagram Grid Block ===== -->
+<article class="work-item reveal">
+  <div class="work-image insta-work">
+    <div class="insta-grid mini-insta">
+      <div class="insta-item"><img src="img/feed01.png" alt="Instagram post 01"></div>
+      <div class="insta-item"><img src="img/feed02.png" alt="Instagram post 02"></div>
+      <div class="insta-item"><img src="img/feed03.png" alt="Instagram post 03"></div>
+      <div class="insta-item"><img src="img/feed04.png" alt="Instagram post 04"></div>
+      <div class="insta-item"><img src="img/feed05.png" alt="Instagram post 05"></div>
+      <div class="insta-item"><img src="img/feed06.png" alt="Instagram post 06"></div>
+      <div class="insta-item"><img src="img/feed07.png" alt="Instagram post 07"></div>
+      <div class="insta-item"><img src="img/feed08.png" alt="Instagram post 08"></div>
+      <div class="insta-item"><img src="img/feed09.png" alt="Instagram post 09"></div>
+    </div>
+  </div>
+
+  <div class="work-text">
+    <h3>Instagram｜Design Posts</h3>
+    <p class="work-tags">#SNS #Design #Canva #Branding</p>
+    <ul class="work-points">
+      <li>世界観の統一（淡色・透明感）</li>
+      <li>情報の優先順位と視線誘導</li>
+      <li>投稿テンプレ化を意識した設計</li>
+    </ul>
+  </div>
+</article>
+
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================
+       ABOUT
+  ========================== -->
+<section id="about" class="section about reveal">
+  <div class="container">
+    <h2 class="section-title">About</h2>
+
+    <div class="about-body">
+      <p>
+        UI/UXデザインとWeb制作を中心に、情報設計からビジュアル、実装まで一貫して対応しています。
+      </p>
+      <p>
+        見た目の美しさだけでなく、初めて触れる人でも迷わず使えること、必要な情報が自然に目に入ることを大切にしています。
+      </p>
+      <p>
+        制作では、目的や課題を整理したうえで、ユーザー視点での導線設計や、運用・更新を見据えた構成を意識しています。
+      </p>
+
+      <div class="about-tools">
+        <p class="about-label">Tools / Tech</p>
+        <ul class="skills">
+          <li>Figma</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Canva</li>
+        </ul>
+      </div>
+
+      <p class="about-note">
+        世界観や空気感を大切にしながら、丁寧に作りたい案件との相性が良いです。
+      </p>
     </div>
   </div>
 </section>
-
-  <section id="about" class="section">
-    <div class="container">
-      <h2>About</h2>
-      <p>神奈川拠点。UI/UXもWebもSNSもまるっと制作　</p><p>Figmaで設計→HTML/CSSで実装。SNSコンテンツまで一気通貫で作り上げます。</p>
-      <ul class="skills">
-        <li>Figma</li><li>HTML/CSS</li><li>SNSコンテンツ</li>
-      </ul>
-    </div>
-  </section>
-</main>
 
 <footer class="site-footer">
   <div class="container">
-    <small>© 2025 UNI</small>
+    <small>© UNI DESIGN</small>
   </div>
 </footer>
 
-<!-- モーダル（拡大表示） -->
-<div id="lightbox" class="modal" aria-hidden="true">
-  <button class="modal-close" aria-label="閉じる">×</button>
-  <img src="" alt="preview">
+<!-- ===== Image Modal ===== -->
+<div id="imageModal" class="image-modal" aria-hidden="true">
+  <div class="image-modal-overlay"></div>
+  <img id="imageModalImg" src="" alt="">
 </div>
 
-<script src="script.js"></script>
+<script>
+(() => {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("imageModalImg");
+
+  document.querySelectorAll(".insta-item img").forEach(img => {
+    img.addEventListener("click", () => {
+      modalImg.src = img.src;
+      modal.classList.add("show");
+      modal.setAttribute("aria-hidden", "false");
+    });
+  });
+
+  modal.addEventListener("click", () => {
+    modal.classList.remove("show");
+    modal.setAttribute("aria-hidden", "true");
+    modalImg.src = "";
+  });
+})();
+</script>
 </body>
 </html>

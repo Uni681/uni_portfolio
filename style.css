@@ -1,0 +1,536 @@
+/* =========================
+   Base
+========================= */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans JP", sans-serif;
+  background: linear-gradient(135deg,#ffffff 0%,#f3f2fa 40%,#ecebfa 70%,#ffffff 100%);
+  color: #2e2e38;
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* =========================
+   Header
+========================= */
+.site-header {
+  padding: 24px 0;
+}
+.site-name {
+  font-size: 14px;
+  letter-spacing: .12em;
+}
+
+/* =========================
+   Hero
+========================= */
+.hero {
+  padding: 96px 0 80px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: clamp(32px, 6vw, 56px);
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+.hero-sub {
+  font-size: 14px;
+  letter-spacing: .08em;
+  color: #6b6b7a;
+}
+
+/* =========================
+   Sections
+========================= */
+.section-title {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+/* =========================
+   Works
+========================= */
+.works {
+  padding: 80px 0;
+}
+
+.works-list {
+  display: grid;
+  gap: 56px;
+}
+.works-list.featured {
+  margin-bottom: 88px;
+}
+
+.work-item {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.work-item.large {
+  grid-template-columns: 360px 1fr;
+}
+
+.work-image {
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+}
+.work-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.work-text h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+.work-text p {
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+}
+.meta {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  color: #777;
+}
+.meta li {
+  margin-bottom: 4px;
+}
+
+/* =========================
+   About
+========================= */
+.about {
+  padding: 80px 0;
+}
+.about-text {
+  max-width: 720px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* =========================
+   Footer
+========================= */
+.site-footer {
+  padding: 40px 0;
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 820px) {
+  .hero {
+    padding: 72px 0 64px;
+  }
+
+  .work-item,
+  .work-item.large {
+    grid-template-columns: 1fr;
+  }
+}
+.insta {
+  padding: 80px 0;
+}
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.insta-item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.insta-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .45s ease;
+}
+
+.insta-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(0,0,0,.12);
+}
+
+.insta-item:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 820px) {
+  .insta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   IMAGE MODAL
+========================= */
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+}
+
+.image-modal.show {
+  display: grid;
+  place-items: center;
+}
+
+.image-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 30, 0.55);
+  backdrop-filter: blur(6px);
+}
+
+/* 画像本体 */
+.image-modal img {
+  position: relative;
+  z-index: 1;
+
+  max-width: min(90vw, 720px);
+  max-height: 90vh;
+
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+
+  border-radius: 18px;
+  background: #fff;
+  padding: 14px;
+
+  box-shadow: 0 30px 80px rgba(0,0,0,.35);
+}
+
+/* スマホ */
+@media (max-width: 820px) {
+  .image-modal img {
+    max-width: 92vw;
+    padding: 10px;
+  }
+}
+/* =========================
+   Soft Reveal (JS controlled)
+========================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================
+   A I R Y  L A V E N D E R  T O N E  (override)
+   - ホワイトグレー＋淡ラベンダー
+   - 水っぽい透明感
+   - 影を“黒”から“紫グレー”寄りに
+   使い方：style.css の一番下にコピペ
+========================================= */
+
+/* --- 色の核（ここだけ変えると一気に調整できる） --- */
+:root{
+  --ink: rgba(35, 34, 46, 0.92);          /* 文字：黒じゃなく濃い紫グレー */
+  --muted: rgba(35, 34, 46, 0.62);        /* サブ文字 */
+  --line: rgba(140, 130, 180, 0.18);      /* 罫線：ラベンダーの薄膜 */
+  --glass: rgba(255,255,255,0.55);        /* 透明ガラス */
+  --lav-1: rgba(240, 236, 255, 0.70);     /* うすラベ */
+  --lav-2: rgba(233, 231, 255, 0.55);     /* うすラベ2 */
+  --mist: rgba(255,255,255,0.65);         /* 白い靄 */
+  --shadow: 0 18px 60px rgba(55, 40, 90, 0.14); /* 黒じゃなく紫寄り影 */
+  --shadow2: 0 10px 30px rgba(55, 40, 90, 0.10);
+}
+
+/* --- 背景：水っぽい層を重ねる（透明感の本体） --- */
+body{
+  color: var(--ink) !important;
+  background:
+    radial-gradient(1200px 800px at 15% 10%, var(--lav-1), transparent 55%),
+    radial-gradient(900px 700px at 85% 25%, var(--lav-2), transparent 60%),
+    radial-gradient(1000px 900px at 50% 90%, rgba(245,245,255,0.65), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #f6f5fb 38%, #f3f2fa 70%, #ffffff 100%) !important;
+}
+
+/* うっすら“水面の靄”を載せる（やりすぎ注意で超薄） */
+body::before{
+  content:"";
+  position: fixed;
+  inset: -30%;
+  pointer-events: none;
+  background:
+    radial-gradient(closest-side at 30% 30%, rgba(255,255,255,0.26), transparent 55%),
+    radial-gradient(closest-side at 70% 40%, rgba(245,242,255,0.22), transparent 58%),
+    radial-gradient(closest-side at 55% 75%, rgba(255,255,255,0.18), transparent 60%);
+  filter: blur(18px);
+  opacity: .9;
+  z-index: -1;
+}
+
+/* --- 見出しとサブ文字を“軽く” --- */
+.hero-sub,
+.meta,
+.site-footer,
+.work-text p{
+  color: var(--muted) !important;
+}
+
+/* --- セクションタイトルを少し繊細に --- */
+.section-title{
+  letter-spacing: .04em;
+}
+
+/* --- Works画像枠：白マット→ガラス寄り、影も紫寄り --- */
+.work-image{
+  background: var(--glass) !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: var(--shadow2) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* 画像自体は主役なので触らないが、空気感のため角丸だけ少し柔らかく */
+.work-image{
+  border-radius: 18px !important;
+}
+
+/* --- 各work item：カード感を“薄膜”に --- */
+.work-item{
+  padding: 10px 0;
+  border-top: 1px solid rgba(140,130,180,0.10);
+}
+.works-list .work-item:first-child{
+  border-top: none;
+}
+
+/* --- Insta：影を軽くして“浮遊”させる --- */
+.insta-item{
+  border: 1px solid rgba(140,130,180,0.14) !important;
+  background: rgba(255,255,255,0.55) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow2) !important;
+}
+.insta-item:hover{
+  box-shadow: var(--shadow) !important;
+}
+
+/* --- モーダル（作品画像）も同じ世界観に寄せる --- */
+.image-modal-overlay{
+  background: rgba(18, 16, 28, 0.42) !important; /* 暗すぎない */
+  backdrop-filter: blur(10px) !important;
+}
+.image-modal img{
+  background:
+    radial-gradient(120% 120% at 30% 20%,
+      rgba(255,255,255,0.92) 0%,
+      rgba(244,241,255,0.92) 55%,
+      rgba(238,238,248,0.92) 100%) !important;
+  border: 1px solid rgba(140,130,180,0.18) !important;
+  box-shadow: 0 28px 90px rgba(55, 40, 90, 0.26) !important;
+}
+
+/* --- ふわっとアニメ：透明感が出るように動きを“遅く、薄く” --- */
+.reveal{
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 1.0s ease, transform 1.0s ease !important;
+}
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   Instagram Grid - Mobile Fix
+   スマホでも必ず3列グリッドにする
+========================================= */
+
+/* 基本（PC含めて安定させる） */
+.insta-grid{
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 6px;
+}
+
+/* 各アイテムが勝手に広がらないように */
+.insta-item{
+  width: 100% !important;
+}
+
+/* スマホ最優先で上書き */
+@media (max-width: 820px){
+  .insta-grid{
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 4px; /* スマホは少し詰めると綺麗 */
+  }
+
+  .insta-item img{
+    width: 100%;
+    aspect-ratio: 1 / 1;   /* 正方形固定 */
+    object-fit: cover;
+  }
+}
+
+/* さらに小さい端末（iPhone SEなど） */
+@media (max-width: 360px){
+  .insta-grid{
+    gap: 3px;
+  }
+}
+
+/* About (standard) */
+.about-body p{
+  margin: 0 0 14px;
+  color: var(--ink, rgba(35,34,46,.92));
+}
+
+.about-tools{
+  margin: 18px 0 12px;
+  padding: 14px 14px;
+  border: 1px solid rgba(140,130,180,0.18);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(10px);
+}
+
+.about-label{
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: rgba(35,34,46,0.62);
+  text-transform: uppercase;
+}
+
+.about-note{
+  margin-top: 14px;
+  color: rgba(35,34,46,0.72);
+}
+
+/* =========================================
+   Instagram Section – Compact Mode
+========================================= */
+
+/* セクション全体の余白を削る */
+.insta{
+  padding-top: 28px !important;
+  padding-bottom: 32px !important;
+}
+
+/* 見出しを控えめに */
+.insta h2,
+.insta .section-title{
+  font-size: 14px !important;
+  letter-spacing: .12em;
+  color: rgba(35,34,46,0.55) !important;
+  margin-bottom: 10px !important;
+}
+
+/* サブテキストがあれば薄く */
+.insta .sub{
+  font-size: 12px;
+  color: rgba(35,34,46,0.45);
+  margin-bottom: 10px;
+}
+
+/* グリッド自体を少し小さく */
+.insta-grid{
+  max-width: 420px;      /* ← ここで“こじんまり感”を調整 */
+  margin: 0 auto;
+  gap: 5px;
+}
+
+/* 各画像の主張を弱める */
+.insta-item{
+  box-shadow: 0 8px 24px rgba(55,40,90,0.10) !important;
+}
+
+/* ホバーも控えめに */
+.insta-item:hover{
+  box-shadow: 0 12px 30px rgba(55,40,90,0.14) !important;
+}
+
+/* スマホでは少しだけ広げる（詰まりすぎ防止） */
+@media (max-width: 820px){
+  .insta-grid{
+    max-width: 100%;
+  }
+}
+
+/* =========================================
+   Works内に入れる Instagram 3x3 Grid
+   - worksの正方形枠に収める
+========================================= */
+
+/* 作品の左枠に入った時だけ適用 */
+.work-image.insta-work{
+  padding: 12px !important;   /* 作品サムネと同じ“額装”感 */
+}
+
+/* グリッドを正方形枠いっぱいに */
+.work-image.insta-work .mini-insta{
+  width: 100%;
+  height: 100%;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 6px;
+}
+
+/* 9枚を完全に正方形へ */
+.work-image.insta-work .mini-insta .insta-item img{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+/* hoverは控えめ（worksの空気感を壊さない） */
+.work-image.insta-work .insta-item:hover img{
+  transform: scale(1.02);
+}
+
+/* スマホ時：グリッドの隙間だけ少し詰める */
+@media (max-width: 820px){
+  .work-image.insta-work .mini-insta{
+    gap: 4px;
+  }
+}

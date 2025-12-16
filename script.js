@@ -1,65 +1,118 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Hero in
-  const heroTitle = document.querySelector(".animate-hero");
-  const heroBar = document.querySelector(".hero-bar");
-  setTimeout(() => {
-    if (heroTitle) { heroTitle.style.opacity = "1"; heroTitle.style.transform = "translateY(0)"; }
-    if (heroBar) heroBar.style.width = "62%";
-  }, 80);
+/* =========================================
+   UNI PORTFOLIO - script.js
+   完全版（これ1つでOK）
+   - Works画像のみモーダル表示
+   - Instagram画像は対象外
+   - ふわっとスクロール表示
+========================================= */
 
-  // Glow once on proto button
-  const protoBtn = document.querySelector(".proto-btn");
-  setTimeout(() => {
-    if (protoBtn) {
-      protoBtn.classList.add("glow");
-      setTimeout(() => protoBtn.classList.remove("glow"), 520);
+(() => {
+  "use strict";
+
+  /* -----------------------------
+     ユーティリティ
+  ----------------------------- */
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+
+  const prefersReducedMotion =
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* -----------------------------
+     1. ふわっと表示（reveal）
+     .reveal を付けた要素が対象
+  ----------------------------- */
+  const setupReveal = () => {
+    const targets = $$(".reveal");
+    if (!targets.length) return;
+
+    if (prefersReducedMotion) {
+      targets.forEach(el => el.classList.add("is-visible"));
+      return;
     }
-  }, 1400);
 
-  // Stagger reveal on scroll（ばららら）
-  const reveals = document.querySelectorAll(".reveal");
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const delay = Number(e.target.dataset.delay || 0) * 90; // 0,90,180...
-        setTimeout(() => e.target.classList.add("show"), delay);
-        io.unobserve(e.target);
+    const io = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    targets.forEach(el => io.observe(el));
+  };
+
+  /* -----------------------------
+     2. Works画像モーダル
+     対象：.work-image img
+     除外：Instagram
+  ----------------------------- */
+  const setupWorkModal = () => {
+    const modal = $("#imageModal");
+    const modalImg = $("#imageModalImg");
+    if (!modal || !modalImg) return;
+
+    const targets = $$(".work-image img");
+    if (!targets.length) return;
+
+    const open = (src, alt = "") => {
+      modalImg.src = src;
+      modalImg.alt = alt;
+      modal.classList.add("show");
+      modal.setAttribute("aria-hidden", "false");
+
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+    };
+
+    const close = () => {
+      modal.classList.remove("show");
+      modal.setAttribute("aria-hidden", "true");
+
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+
+      setTimeout(() => {
+        modalImg.src = "";
+        modalImg.alt = "";
+      }, 100);
+    };
+
+    // クリックで開く
+    targets.forEach(img => {
+      img.style.cursor = "zoom-in";
+      img.addEventListener("click", e => {
+        e.preventDefault();
+        open(img.src, img.alt || "");
+      });
+    });
+
+    // 背景クリックで閉じる
+    modal.addEventListener("click", close);
+
+    // Escで閉じる
+    window.addEventListener("keydown", e => {
+      if (e.key === "Escape" && modal.classList.contains("show")) {
+        close();
       }
     });
-  }, { threshold: 0.15 });
-  reveals.forEach(el => io.observe(el));
-
-  // Instagram lightbox（クリック拡大：修正済み）
-  const modal = document.getElementById("lightbox");
-  const modalImg = modal.querySelector("img");
-  const closeBtn = modal.querySelector(".modal-close");
-
-  document.querySelector(".insta-grid")?.addEventListener("click", (ev) => {
-    const img = ev.target.closest(".insta-item img");
-    if (!img) return;
-    const src = img.getAttribute("data-full") || img.src;
-    modalImg.src = src;
-    modal.classList.add("show");
-    modal.setAttribute("aria-hidden", "false");
-  });
-
-  const closeModal = () => {
-    modal.classList.remove("show");
-    modal.setAttribute("aria-hidden", "true");
-    modalImg.src = "";
   };
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal || e.target === closeBtn) closeModal();
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("show")) closeModal();
-  });
-});
-// --- Mobile-only: 「詳細を見る」の本文で句点の後に改行を入れる（箇条書きは対象外） ---
-if (window.matchMedia("(max-width: 820px)").matches) {
-  document.querySelectorAll('.card details p').forEach(p => {
-    if (p.dataset.brApplied) return;                 // 二重適用防止
-    p.innerHTML = p.innerHTML.replace(/。\s*/g, '。<br>');
-    p.dataset.brApplied = "true";
-  });
-}
+
+  /* -----------------------------
+     初期化
+  ----------------------------- */
+  const init = () => {
+    setupReveal();
+    setupWorkModal();
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();

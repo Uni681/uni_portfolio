@@ -546,3 +546,12 @@ body::before{
     transition: none !important;
   }
 }
+
+/* =========================================
+   Hero title optical centering
+========================================= */
+
+.hero h1{
+  text-align: center;
+  transform: translateX(0.08em); /* ← 微調整。0.03〜0.06で好み調整 */
+}
